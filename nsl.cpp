@@ -1,5 +1,5 @@
 vector<int> nsl(vector<int> &vec){
-    int n = vec.size();
+    const int n = vec.size();
     vector<int> result(n,-1);
     stack<int> stk;
     for(int i=0;i<n;i++){
