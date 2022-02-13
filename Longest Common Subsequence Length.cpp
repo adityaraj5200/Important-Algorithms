@@ -1,4 +1,4 @@
-int longestCommonSubsequence(string &s1,string &s2){
+int longestCommonSubsequenceLength(string &s1,string &s2){
     // Returns the length of Longest Common Subsequence of the two strings.
     const int n = s1.length(), m = s2.length();
     vector<vector<int>> dp = vector<vector<int>>(n+1,vector<int>(m+1,0));
