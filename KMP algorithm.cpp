@@ -15,7 +15,7 @@ bool KMPalgorithm(string &p, string &s){
     if(m>n) return false;
     
     // Making the lps array
-    vector<int> lps(m);
+    vector<int> lps(m); // lps-longest prefix suffix
     lps[0] = 0;
     for(int i=1,j=0;i<m;i++){
         if(p[i] == p[j]){
