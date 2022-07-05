@@ -1,5 +1,5 @@
 /* Following is the code for level order traversal of a binary tree */
-    queue<pair<Node*> q;
+    queue<Node*> q;
     q.push({root});
 
     while(!q.empty()){
