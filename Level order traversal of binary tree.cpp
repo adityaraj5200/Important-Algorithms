@@ -11,10 +11,10 @@
             // cout<<node->data<<' ';
           
             if(node->left){
-                q.push(node);
+                q.push(node->left);
             }
             if(node->right){
-                q.push(node);
+                q.push(node->right);
             }
         }
     }
