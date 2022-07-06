@@ -1,6 +1,7 @@
 /* Following is the code for level order traversal of a binary tree */
     queue<Node*> q;
-    q.push(root);
+    if(root != NULL)
+        q.push(root);
 
     while(!q.empty()){
         int sz = q.size();
