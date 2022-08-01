@@ -1,0 +1,847 @@
+
+{
+	// Place your snippets for cpp here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	"Default cpp formate": {
+		"prefix": [
+			"snippet"
+		],
+		"body": [
+			"//\tCode written by Aditya ;)   ||  C++ Snippet",
+			"#include <bits/stdc++.h>",
+			"using namespace std;\n",
+			
+			"typedef long long ll;\n",
+			
+			"int main(){",	
+			"\t${0:}",
+			"\treturn 0;",
+			"}\n",
+		
+		],
+		"description": "This is a c++ code snippet",
+		
+	},
+
+	"snippet for testcases":{
+		"prefix": [
+			"cpsnippet"
+		],
+		"body": [
+			"/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+			" Code written by Aditya ;)   ||  Codechef/codeforces: @adityaraj5200",
+			"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/",
+			"//----------HEADER----------",
+			"#include<bits/stdc++.h>",
+			"using namespace std;",
+			"",
+			"//#include<ext/pb_ds/assoc_container.hpp>",
+			"//#include<ext/pb_ds/tree_policy.hpp>",
+			"//using namespace __gnu_pbds;",
+			"//template<class T> using ordered_set=tree<T,null_type,less<T>,rb_tree_tag,tree_order_statistics_node_update >;",
+			"",
+			"//----------MACROS----------",
+			"#define fastio                        \\",
+			"    ios_base::sync_with_stdio(false);  \\",
+			"    cin.tie(NULL);                     \\",
+			"    cout.tie(NULL)",
+			"#define endl                  \"\\n\" ",
+			"#define all(u)                u.begin(), u.end()",
+			"#define rall(v)               v.rbegin(), v.rend()",
+			"#define sortall(u)            sort(all(u))",
+			"#define lcm(a,b)              (a*b)/__gcd(a,b)",
+			"#define gcd(a,b)              __gcd(a,b)",
+			"#define summation(n)          (((n)*((n)+1))/2)",
+			"#define countDigits(n)             (1+floor(log10(n)))",
+			"#define setbits(u)            __builtin_popcount(u)",
+			"#define ctz(u)                __builtin_ctz(u)",
+			"#define clz(u)                __builtin_clz(u)",
+			"#define checkbit(num,i)       (num&(1<<i))  //select the bit of position i of val",
+			"#define lowbit(u)             ((u)&((u)^((u)-1))) //get the lowest bit of u",
+			"#define trav(u,it)            for(auto it = u.begin(); it != u.end(); it++)",
+			"#define in(u, a, b)           (min(a,b) <= u && u <= max(a,b))",
+			"",
+			"//----------TYPEDEFS----------",
+			"typedef unsigned int          uint;",
+			"typedef long long             ll;",
+			"typedef unsigned long long    ull;",
+			"typedef long double           ld;",
+			"typedef pair<int, int>         pii;",
+			"",
+			"//----------DEBUG METHODS----------",
+			"void __print(int x) { cerr << x; }",
+			"void __print(long x) { cerr << x; }",
+			"void __print(long long x) { cerr << x; }",
+			"void __print(unsigned x) { cerr << x; }",
+			"void __print(unsigned long x) { cerr << x; }",
+			"void __print(unsigned long long x) { cerr << x; }",
+			"void __print(float x) { cerr << x; }",
+			"void __print(double x) { cerr << x; }",
+			"void __print(long double x) { cerr << x; }",
+			"void __print(char x) { cerr << '\\'' << x << '\\''; }",
+			"void __print(const char* x) { cerr << '\"' << x << '\"'; }",
+			"void __print(const string& x) { cerr << '\"' << x << '\"'; }",
+			"void __print(bool x) { cerr << (x ? \"true\" : \"false\"); }",
+			"template<typename T, typename V>",
+			"void __print(const pair<T, V>& x) { cerr << '{'; __print(x.first); cerr << ','; __print(x.second); cerr << '}'; }",
+			"template<typename T>",
+			"void __print(const T& x) { int f = 0; cerr << '{'; for (auto& i : x) cerr << (f++ ? \",\" : \"\"), __print(i); cerr << \"}\"; }",
+			"void _print() { cerr << \"]\\n\"; }",
+			"template <typename T, typename... V>",
+			"void _print(T t, V... v) { __print(t); if (sizeof...(v)) cerr << \", \"; _print(v...); }",
+			"",
+			"#ifndef ONLINE_JUDGE",
+			"#define debug(x...) cerr << \"[\" << #x << \"] = [\"; _print(x)",
+			"#define nline cerr << endl",
+			"#else",
+			"#define debug(x...)",
+			"#define nline ",
+			"#endif",
+			"",
+			"//----------CONSTANTS----------",
+			"const ll mod = 1000000007;",
+			"const ll mod2 = 998244353;",
+			"const ld ep = 0.0000001;",
+			"const ld pi = acos(-1.0);",
+			"",
+			"//----------TEMPLATES---------- Works only in C++ 17",
+			"template<typename... T>",
+			"void read(T&... args) { ((cin >> args), ...); }",
+			"template<typename... T>",
+			"void put(T&&... args) { ((cout << args << \" \"), ...); }",
+			"template<typename... T>",
+			"void putl(T&&... args) { ((cout << args << \" \"), ...); cout << endl; }",
+			"template<typename... T>",
+			"void putnl(T&&... args) { ((cout << args << \"\\n\"), ...);}",
+			"",
+			"//----------Custom hash map-------------",
+			"struct custom_hash",
+			"{",
+			"    static uint64_t splitmix64(uint64_t x)",
+			"    {",
+			"        x += 0x9e3779b97f4a7c15;",
+			"        x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;",
+			"        x = (x ^ (x >> 27)) * 0x94d049bb133111eb;",
+			"        return x ^ (x >> 31);",
+			"    }",
+			"",
+			"    size_t operator()(uint64_t x) const {",
+			"        static const uint64_t FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count();",
+			"        return splitmix64(x + FIXED_RANDOM);",
+			"    }",
+			"};",
+			"template <typename T1, typename T2> // Key should be integer type",
+			"using safe_map = unordered_map<T1, T2, custom_hash>;",
+			"",
+			"",
+			"//----------Operator overloads--------------",
+			"template <typename T1, typename T2> // cin >> pair<T1, T2>",
+			"istream& operator>>(istream& istream, pair<T1, T2>& p) {",
+			"    return (istream >> p.first >> p.second);",
+			"}",
+			"template <typename T> // cin >> vector<T>",
+			"istream& operator>>(istream& istream, vector<T>& v) {",
+			"    for (auto& it : v)",
+			"        cin >> it;",
+			"    return istream;",
+			"}",
+			"template <typename T1, typename T2> // cout << pair<T1, T2>",
+			"ostream& operator<<(ostream& ostream, const pair<T1, T2>& p) {",
+			"    return (ostream << p.first << \" \" << p.second);",
+			"}",
+			"template <typename T> // cout << vector<T>",
+			"ostream& operator<<(ostream& ostream, const vector<T>& c) {",
+			"    for (auto& it : c)",
+			"        cout << it << \" \";",
+			"    return ostream;",
+			"}",
+			"template <typename T>",
+			"int32_t size_i(T& container) { return static_cast<int32_t>(container.size()); }",
+			"",
+			"",
+			"//----------Mathematical functions------------",
+			"int GCD_extended(int a, int b, int& x, int& y) {",
+			"    x = 1, y = 0;",
+			"    int x1 = 0, y1 = 1, a1 = a, b1 = b;",
+			"    while (b1){",
+			"        int q = a1 / b1;",
+			"        tie(x, x1) = make_tuple(x1, x - q * x1);",
+			"        tie(y, y1) = make_tuple(y1, y - q * y1);",
+			"        tie(a1, b1) = make_tuple(b1, a1 - q * b1);",
+			"    }",
+			"    return a1;",
+			"}",
+			"",
+			"ll modpow(ll x, ll n, ll m = mod) {",
+			"    if (x == 0 && n == 0)",
+			"        return 0; // undefined case",
+			"    ",
+			"    ll res = 1;",
+			"    while (n > 0)",
+			"    {",
+			"        if (n % 2)",
+			"            res = (res * x) % m;",
+			"        x = (x * x) % m;",
+			"        n /= 2;",
+			"    }",
+			"    return res;",
+			"}",
+			"",
+			"ll modinv(ll x, ll m = mod) {",
+			"    return modpow(x, m - 2, m);",
+			"}",
+			"",
+			"mt19937 rng;",
+			"int getRandomNumber(int l, int r)",
+			"{",
+			"    uniform_int_distribution<int> dist(l, r);",
+			"    return dist(rng);",
+			"}",
+			"",
+			"/*/------------------------------ CODE BEGINS ------------------------------/*/",
+			"void preprocess(){",
+			"    rng = mt19937(chrono::steady_clock::now().time_since_epoch().count());",
+			"}\n",
+			"const int N = 2e5 + 5;",
+			"",
+			"void solve(){",
+			"    ${0:// Solve here}",
+			"}",
+			"/*/------------------------------- CODE ENDS -------------------------------/*/",
+			"",
+			"int main(){",
+			"    fastio;",
+			"    // cout << setprecision(12) << fixed;",
+			"",
+			"    preprocess();",
+			"",
+			"    int num_tc=1; ",
+			"    ${1: cin>>num_tc;}",
+			"    for(int tc=1;tc<=num_tc;tc++){",
+			"        solve();",
+			"    }",
+			"",
+			"    return 0;",
+			"}",
+
+		],
+		"description": "It writes testcase snippet"
+	},
+	
+	"snippet 2 for testcases":{
+		"prefix": [
+			"cpsmallsnippet"
+		],
+		"body": [
+			"#include<bits/stdc++.h>",
+			"using namespace std;\n",
+			
+			"typedef long long ll;\n",
+			"#define all(v) v.begin(),v.end()",
+			"#define rall(v) v.rbegin(),v.rend()\n",
+
+			"void solve(){",
+			"\t${0:/*Start writing testcases : */}",
+			"}",
+
+			"\nint main(){",
+			"\tint tc=1;",
+			"\t${1:cin>>tc;}",
+			"\twhile(tc--){",
+			"\t\tsolve();",
+			"\t}\n",
+			"\treturn 0;",
+			"}",
+		],
+		"description": "It writes testcase snippet2"
+	},
+	
+	
+	"snippet for i loop from a to b":{
+		"prefix":["fori"],
+		"body":[
+			"for(int i=${1:0};i<${2:n};i++){",
+			"\t${0:/*code*/}",
+			"}",
+		],
+		"description": "for loop with i variable"
+	,},
+	
+	"snippet for i loop in reverse":{
+		"prefix":["forireverse"],
+		"body":[
+			"for(int i=${1:n-1};i>=${2:0};--i){",
+			"\t${0:/*code*/}",
+			"}",
+		],
+		"description": "for loop with i variable"
+	,},
+
+	"snippet for ij loop":{
+		"prefix":["forij"],
+		"body":[
+			"for(int i=${1:0};i<${2:n};i++){${3:}",
+			"\tfor(int j=${4:0};j<${5:n};j++){",
+			"\t\t${0:/*code*/}",
+			"\t}\n}\n",
+		],
+		"description": "for loop with i and j variable"
+	,},
+
+	"snippet for ji loop":{
+		"prefix":["forji"],
+		"body":[
+			"for(int j=0;j<${1:m};j++){${2:}",
+			"\tfor(int i=0;i<${3:n};i++){",
+			"\t\t${0:/*code*/}${4:}",
+			"\t}\n}",
+		],
+		"description": "for loop with i variable"
+	,},
+
+	"snippet for loop with 1 indexing":{
+		"prefix":["for1n"],
+		"body":[
+			"for(int i=1;i<=n;i++){",
+			"\t${0:/*code*/}",
+			"}",
+		],
+		"description": "for loop with i variable"
+	,},
+	
+	"snippet for j loop":{
+		"prefix":["forj"],
+		"body":[
+			"for(int j=${1:0};j<${2:n};j++){",
+			"\t${0:/*code*/}",
+			"}",
+		],
+		"description": "for loop with j variable"
+	},
+
+	"snippet for j loop in reverse":{
+		"prefix":["forjrev"],
+		"body":[
+			"for(int j=${1:n-1};j>=${2:0};--j){",
+			"\t${0:/*code*/}",
+			"}",
+		],
+		"description": "for loop with i variable"
+	,},
+	
+	"snippet for k loop":{
+		"prefix":["fork"],
+		"body":[
+			"for(int k=${1:0};k<${2:n};k++){",
+			"\t${0:/*code*/}",
+			"}",
+		],
+		"description": "for loop with k variable"
+	},
+	
+	"snippet for clock time":{
+		"prefix": ["clocktime"],
+		"body": [
+			"\nclock_t begin = clock();\n",
+			"${0:/* here, do your time-consuming job */}\n",
+			"clock_t end = clock();",
+			"double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;",
+			"cout<<\"time_spent = \"<<time_spent<<'s'<<endl;\n"
+		],
+		"description": "Use it to find execution time"
+	},
+	
+	"snippet for checking prime numbers":{
+		"prefix": ["funisPrime"],
+		"body": [
+			"bool isPrime(int num){",
+			"\tif(num==1) return false;",
+			"\tif(num==2) return true;",
+			"\tif(!(num&1)) return false;",
+			"\tfor(int i=3;i*i<=num;i+=2){",
+			"\t\tif(num%i==0) return false;",
+			"\t}",
+			"\treturn true;",
+			"}\n"
+		],
+		"description": "Use it to cheking whether num is prime or not"
+	},
+	
+	
+	"snippet for getting factorial of a number":{
+		"prefix": ["funfactorial"],
+		"body": [
+			"ll factorial(ll n){",
+			"\tll ans = 1;",
+			"\tfor(ll i=2;i<=n;i++)",
+			"\t\tans *= i;",
+			"\treturn ans;",
+			"}"
+		],
+		"description": "Use it to cheking whether num is prime or not"
+	},
+	
+	"snippet for trucating dividend to its next multiple by divisor":{
+		"prefix": ["funupperTruncate"],
+		"body": [
+			"\nlong long upperTruncate(long long dividend,long long divisor){",
+			"\treturn dividend + (divisor-(dividend%divisor))%divisor;",
+			"}\n"
+			
+		],
+		"description": "Use it to Truncate a number to its next multiple to its divisor"
+	},
+	
+	"snippet for checking string is regular expression or not":{
+		"prefix": ["funisRegularExp"],
+		"body": [
+			"bool isRegularExp(string s){",
+			"\tint n=s.length(), stack = 0;;",
+			"\tfor(int i=0;i<n;i++){",
+			"\t\tif(s[i]=='(') stack++;",
+			"\t\telse{",
+			"\t\t\tstack--;",
+			"\t\t\tif(stack<0) return false;",
+			"\t\t}",
+			"\t}",
+			"\treturn (stack==0);",
+			"}",
+		],
+		"description": "Use it to check whether string is regular expression or not"
+	},
+	
+	"snippet for printing number in binary":{
+		"prefix": ["fundectobinary"],
+		"body": [
+			"\nvoid decToBinary(int val,int bits=8){",
+			"\tcout<<setw(4)<<val<<\" -> \";",
+			"\tstack<int> stk;",
+			"\twhile(bits--){",
+			"\t\tstk.push(val&1);",
+			"\t\tval >>= 1;",
+			"\t}",
+			"\twhile(!stk.empty()){",
+			"\t\tcout<<stk.top();",
+			"\t\tstk.pop();",
+			"\t}",
+			"\tcout<<endl;",
+			"}\n"
+		],
+		"description": "Use it to check whether string is regular expression or not"
+	},
+
+	"snippet for declaring array and taking input":{
+		"prefix": ["arrin"],
+		"body": [
+			"int ${1:arr}[${2:n}];",
+			"for(int i=0;i<${2:n};i++) ",
+			"\tcin>>${1:arr}[i];\n",
+		],
+		"description": "Use it to declare an array and take input in it"
+	},
+	
+	"snippet for displaying an array":{
+		"prefix": ["arrout"],
+		"body": [
+			"for(int i=0;i<n;i++) ",
+			"cout<<${1:arr}[i]<<' ';cout<<endl;\n\n",
+		],
+		"description": "Use it to display an array"
+	},
+
+	"snippet for declaring vector and taking input": {
+		"prefix": "vecin",
+		"body": [
+		  "vector<${1:int}> ${2:vec}(${3:n});",
+		  "for(int i=0;i<${3:n};i++){",
+		  "\tcin>>${2:vec}[i];\n}",
+		],
+		"description": "snippet for declaring vector and taking input"
+	},
+
+	"snippet for displaying a vector":{
+		"prefix": ["vecout"],
+		"body": [
+			"for(int i=0;i<${1:vec}.size();i++) ",
+			"\tcout<<${1:vec}[i]<<' ';",
+			"cout<<endl;"
+		],
+		"description": "Use it to display a vector"
+	},
+
+	"snippet for getting randome variables between specified limits":{
+		"prefix": ["getrandom"],
+		"body": [
+			"template<typename T>",
+			"T getrandom(T l,T r){",
+			"\treturn rand() % (r-l+1) + l;",
+			"}\n"
+		],
+		"description": "Use it to get random elements"
+	},
+
+	"snippet for SortBySecond":{
+		"prefix": ["sortBySecond"],
+		"body": [
+			"bool SortBySecond(const pair<int,int> &a,const pair<int,int> &b){",
+			"\tif(a.second == b.second)",
+			"\t\treturn a.first<b.first;",
+			"\treturn a.second<b.second;",
+			"}\n"
+		],
+		"description": " snippet"
+	},
+
+	"Snippet for function to check Perfect Square":{
+		"prefix": "funisPerfectSquare",
+		"body": [
+			"bool isPerfectSquare(int num){",
+			"    return((ceil(sqrt(num))*ceil(sqrt(num)) == num));",
+			"}\n"
+		],
+		"description": "Snippet for function to check Perfect Square"
+	},
+
+	"Snippet for Custom Comparator function pairs":{
+		"prefix": "myComp",
+		"body": [
+			"bool myComp(const pair<int,int> &a,const pair<int,int> &b){",
+			"\tif(a.first == b.first) ",
+			"\t\treturn a.second>b.second;\n",
+			"\treturn a.first<b.first;",
+			"}"
+		],
+		"description": "Snippet for function to check Perfect Square"
+	},
+
+	"Snippet for Prime Sieve":{
+		"prefix": "SievePrimeumbers",
+		"body": [
+			"bool prime[100005];",
+			"void sieve(int n){",
+			"\tmemset(prime,true,sizeof(prime));",
+			"\tprime[1]=false;",
+			"\tfor (int p=2;p*p<=n;p++){",
+			"\t\tif(prime[p]){",
+			"\t\t\tfor(int i=p*p;i<=n;i+=p)",
+			"\t\t\t\tprime[i]=false;",
+			"\t\t}",
+			"\t}",
+			"}\n"
+		],
+		"description": "Snippet for Sieve to check Prime Numbers"
+	},
+
+	"snippet for generating testcases":{
+		"prefix": ["testcaseGenerator"],
+		"body": [
+			"// A C++ Program to generate test cases for ",
+			"// array filled with random numbers\n",
+			"#include<bits/stdc++.h>",
+			"using namespace std;\n",
+			"template<typename T>",
+			"T getrandom(T l,T r){",
+			"\treturn rand() % (r-l+1) + l;",
+			"}\n",
+			"void print(vector<int>& vec){",
+			"\tfor(auto &val: vec)",
+			"\t\tcout<<val<<' ';",
+			"\tcout<<endl;",
+			"}\n",
+			"void print(string& s){",
+			"\tfor(auto &ch: s)",
+			"\t\tcout<<ch;",
+			"\tcout<<endl;",
+			"}\n",
+			"int main()",
+			"{",
+			"\tsrand(time(NULL));",
+			"\tint num_tc = ${1:5}; ",
+			"\tint MAXNUM = ${2:10};",
+			"\tint LeftLimit  = ${3:1};",
+			"\tint RightLimit = ${4:100};\n",
+			"\tfreopen (\"Test_Cases.txt\", \"w\", stdout);",
+			"\tcout<<num_tc<<endl;",
+			"\tfor(int tt=1;tt<=num_tc;tt++){",
+			"\t\tint n = getrandom(1,MAXNUM);\n",
+			"\t\t// string vec(n);",
+			"\t\tvector<int> vec(n);\n",
+			"\t\tfor(int i=0;i<n;i++){",
+			"\t\t\tvec[i] = getrandom(LeftLimit,RightLimit);",
+			"\t\t}",
+			"\t\tcout<<n<<endl;",
+			"\t\t// sort(vec.begin(),vec.end());\n",
+			"\t\tprint(vec);",
+			"\t}",
+			"\tfclose(stdout);",
+			"\treturn(0);",
+			"}"
+
+		],
+		"description": "This snippet generates testcases"
+	},
+
+	"snippet for generating leetcode":{
+		"prefix": ["leetcodetcgenerator"],
+		"body": [
+			// A C++ Program to generate test cases for Leetcode Questions
+			"#include<bits/stdc++.h>",
+			"using namespace std;\n",
+			"template<typename T>",
+			"T getrandom(T l,T r){",
+			"\treturn rand() % (r-l+1) + l;",
+			"}\n",
+			"void print(vector<int>& vec){",
+			"\tcout<<\"[\";",
+			"\tcout<<vec[0];",
+			"\tfor(int i=1;i<vec.size();i++){",
+			"\t\tcout<<\",\"<<vec[i];",
+			"\t}",
+			"\tcout<<\"]\\n\";",
+			"}\n",
+			"void print(string& s){",
+			"\tcout<<'\"';",
+			"\tfor(char &ch: s) cout<<ch;",
+			"\tcout<<'\"'<<endl;",
+			"}\n\n",
+			"int main()",
+			"{",
+			"\tsrand(time(NULL));",
+			"\tint num_tc = ${1:1}; ",
+			"\tint MAXNUM = ${2:20};",
+			"\tint LeftLimit  = ${3:1};",
+			"\tint RightLimit = ${4:100};",
+			"\tfreopen (\"Test_Cases.txt\", \"w\", stdout);\n",
+			"\t//cout<<\"[\";",
+			"\tfor(int tt=1;tt<=num_tc;tt++){",
+			"\t\tvector<int> vec(MAXNUM);",
+			"\t\tfor(int i=0;i<MAXNUM;i++){",
+			"\t\t\tvec[i] = getrandom(LeftLimit,RightLimit);",
+			"\t\t}",
+			"\t\t// sort(vec.begin(),vec.end());",
+			"\t\tprint(vec);\n",
+			"\t\t// if(tt<num_tc) cout<<\",\";",
+			"\t\t// string str(MAXNUM,'-');",
+			"\t\t// for(int i=0;i<MAXNUM;i++){",
+			"\t\t//     str[i] = getrandom('a','z');",
+			"\t\t//     // str[i] = getrandom('0','1');",
+			"\t\t// }",
+			"\t\t// sort(str.begin(),str.end());",
+			"\t\t// print(str);",
+			"\t}",
+			"\t// cout<<\"]\";",
+			"\tfclose(stdout); ",
+			"\treturn(0); ",
+			"}"
+
+		],
+		"description": "This snippet generates testcases for leetcode"
+	},
+
+	"snippet for all direction movement":{
+		"prefix": ["dxy"],
+		"body": [
+			"// all 4 & 8- direction move",
+			"int dx4[4]={1,0,-1,0};",
+			"int dy4[4]={0,1,0,-1};",
+			"int dx8[8]={1,1,1,0,0,-1,-1,-1};",
+			"int dy8[8]={0,1,-1,1,-1,0,1,-1};"
+
+		],
+		"description": "This snippet generates testcases for leetcode"
+	},	
+
+	"snippet for input output in .txt style" :{
+		"prefix": ["txtio"],
+		"body": [
+			"#ifndef ONLINE_JUDGE",
+			"\tfreopen(\"input.txt\", \"r\", stdin);",
+			"\tfreopen(\"output.txt\", \"w\", stdout);",
+			"\tfreopen(\"debug.txt\", \"w\", stderr);",
+			"#endif\n",
+			"${0:#ifndef ONLINE_JUDGE\n\tfclose(stdin);//move this line to bottom\n#endif}\n"
+		],
+		"description": "This snippet generates testcases for leetcode"
+	},
+
+	"snippet for finding next greater element in a vector" :{
+		"prefix": ["funnextgreater"],
+		"body": [
+			"template<typename T>",
+			"vector<int> nextGreaterRight(vector<T>& vec){",
+			"\t// Returns a vector which contains an index for which the right element will be",
+			"\t// greater than the current element ",
+			"\t// If there isn't any greater element then there will be -1.",
+			"\tint n = vec.size();",
+			"\tstack<T> stk;",
+			"\tvector<int> result(n);\n",
+			"\tfor(int i=n-1;i>=0;--i){",
+			"\t\twhile(!stk.empty() && vec[stk.top()] <= vec[i])",
+			"\t\t\tstk.pop();",
+			"\t\tresult[i] = !stk.empty() ? stk.top() : -1;",
+			"\t\tstk.push(i);",
+			"\t}",
+			"\treturn result;",
+			"}",
+			
+			"",
+			
+			"template<typename T>",
+			"vector<int> nextGreaterLeft(vector<T>& vec){",
+			"\tint n = vec.size();",
+			"\tstack<T> stk;",
+			"\tvector<int> result(n);\n",
+			"\tfor(int i=0;i<n;i++){",
+			"\t\twhile(!stk.empty() && vec[stk.top()] <= vec[i])",
+			"\t\t\tstk.pop();",
+			"\t\tresult[i] = !stk.empty() ? stk.top() : -1;",
+			"\t\tstk.push(i);",
+			"\t}",
+			"\treturn result;",
+			"}"
+
+		],
+		"description": "This snippet generates testcases for leetcode"
+	},
+
+	"Snippet function to get the value of nCr": {
+		"prefix": "funnCr",
+		"body": [
+			"ll nCr(ll n,ll r){",
+			"    r = min(n,n-r);",
+			"    ll numerator = 1, denominator = 1, times = r;",
+			"    while(times--){",
+			"        numerator *=  n--;",
+			"        denominator *= r--;",
+			"    }",
+			"    return numerator/denominator;",
+			"}"
+		],
+		"description": "Use this function to get the value of nCr"
+	},
+	
+	"Use this function to get the value of nPr": {
+		"prefix": "funnPr",
+		"body": [
+		  "template<typename T>",
+		  "T nPr(T n,T r){",
+		  "    T ans = 1,times = n-r;",
+		  "    while(times--)",
+		  "        ans *= n--;",
+		  "    return ans;",
+		  "}\n"
+		],
+		"description": "Use this function to get the value of nPr"
+	  },
+	
+	"Use this function to get the Highest setbit of a number": {
+		"prefix": "fungetHighestPowerof2",
+		"body": [
+			"int getHighestPowerof2(int n){",
+			"\tn |= n >> 1;",
+			"\tn |= n >> 2;",
+			"\tn |= n >> 4;",
+			"\tn |= n >> 8;",
+			"\tn |= n >> 16;",
+			"\tn++;",
+			"\treturn (n>>1);",
+			"}"
+		],
+		"description": "Use this function to get the value of nPr"
+	  },
+	
+	"snippet for declaring a vector of integer": {
+		"prefix": "vec",
+		"body": [
+		  "vector<${1:int}> ${2:vec} = vector<${1:int}>(${3:n},${4:0});\n"
+		],
+		"description": "snippet for declaring a vector of integer"
+	},
+
+	"snippet for declaring a vector of vector of integer": {
+		"prefix": "2dvector",
+		"body": [
+			"vector<vector<${1:int}>> ${2:vec}(${3:n},vector<${1:int}>(${4:m},${5:0}));\n"
+		],
+		"description": "snippet for declaring a vector of integer"
+	},	
+
+	"snippet for declaring a struct of Points": {
+		"prefix": "structpoint",
+		"body": [
+			"struct Point{",
+			"    int x,y;",
+			"    Point(int x=0,int y=0){",
+			"        this->x = x;",
+			"        this->y = y;",
+			"    }",
+			"    Point operator + (Point const& obj) {",
+			"        Point res;",
+			"        res.x = x + obj.x;",
+			"        res.y = y + obj.y;",
+			"        return res;",
+			"    }",
+			"    Point operator - (Point const& obj) {",
+			"        Point res;",
+			"        res.x = x - obj.x;",
+			"        res.y = y - obj.y;",
+			"        return res;",
+			"   }",
+			"    void print() {cout << \"x = \"<< x << \", y = \" << y << '\\n';",
+			"   }",
+			"};"
+		],
+		"description": "snippet for declaring a vector of integer"
+	},
+
+	"snippet for declaring debug methods": {
+		"prefix": "debugmethods",
+		"body": [
+			"//----------DEBUG METHODS----------",
+			"void __print(int x) { cerr << x; }",
+			"void __print(long x) { cerr << x; }",
+			"void __print(long long x) { cerr << x; }",
+			"void __print(unsigned x) { cerr << x; }",
+			"void __print(unsigned long x) { cerr << x; }",
+			"void __print(unsigned long long x) { cerr << x; }",
+			"void __print(float x) { cerr << x; }",
+			"void __print(double x) { cerr << x; }",
+			"void __print(long double x) { cerr << x; }",
+			"void __print(char x) { cerr << '\\'' << x << '\\''; }",
+			"void __print(const char* x) { cerr << '\"' << x << '\"'; }",
+			"void __print(const string& x) { cerr << '\"' << x << '\"'; }",
+			"void __print(bool x) { cerr << (x ? \"true\" : \"false\"); }",
+			"template<typename T, typename V>",
+			"void __print(const pair<T, V>& x) { cerr << '{'; __print(x.first); cerr << ','; __print(x.second); cerr << '}'; }",
+			"template<typename T>",
+			"void __print(const T& x) { int f = 0; cerr << '{'; for (auto& i : x) cerr << (f++ ? \",\" : \"\"), __print(i); cerr << \"}\"; }",
+			"void _print() { cerr << \"]\\n\"; }",
+			"template <typename T, typename... V>",
+			"void _print(T t, V... v) { __print(t); if (sizeof...(v)) cerr << \", \"; _print(v...); }",
+			"",
+			"#ifndef ONLINE_JUDGE",
+			"#define debug(x...) cerr << \"[\" << #x << \"] = [\"; _print(x)",
+			"#define nline cerr << endl",
+			"#else",
+			"#define debug(x...)",
+			"#define nline ",
+			"#endif",
+
+		],
+		"description": "snippet for declaring debug methods"
+	},
+
+
+}
