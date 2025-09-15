@@ -1,4 +1,3 @@
-
 {
 	// Place your snippets for cpp here. Each snippet is defined under a snippet name and has a prefix, body and 
 	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
@@ -14,7 +13,7 @@
 	// 	"description": "Log output to console"
 	// }
 
-	"Default cpp formate": {
+	"Default cpp format": {
 		"prefix": [
 			"snippet"
 		],
@@ -22,9 +21,6 @@
 			"//\tCode written by Aditya ;)   ||  C++ Snippet",
 			"#include <bits/stdc++.h>",
 			"using namespace std;\n",
-			
-			"typedef long long ll;\n",
-			
 			"int main(){",	
 			"\t${0:}",
 			"\treturn 0;",
@@ -47,38 +43,30 @@
 			"#include<bits/stdc++.h>",
 			"using namespace std;",
 			"",
-			"//#include<ext/pb_ds/assoc_container.hpp>",
-			"//#include<ext/pb_ds/tree_policy.hpp>",
-			"//using namespace __gnu_pbds;",
-			"//template<class T> using ordered_set=tree<T,null_type,less<T>,rb_tree_tag,tree_order_statistics_node_update >;",
 			"",
 			"//----------MACROS----------",
 			"#define fastio                        \\",
 			"    ios_base::sync_with_stdio(false);  \\",
 			"    cin.tie(NULL);                     \\",
 			"    cout.tie(NULL)",
-			"#define endl                  \"\\n\" ",
+			"#define endl                  \"\\n\"",
 			"#define all(u)                u.begin(), u.end()",
 			"#define rall(v)               v.rbegin(), v.rend()",
 			"#define sortall(u)            sort(all(u))",
 			"#define lcm(a,b)              (a*b)/__gcd(a,b)",
 			"#define gcd(a,b)              __gcd(a,b)",
-			"#define summation(n)          (((n)*((n)+1))/2)",
-			"#define countDigits(n)             (1+floor(log10(n)))",
 			"#define setbits(u)            __builtin_popcount(u)",
 			"#define ctz(u)                __builtin_ctz(u)",
 			"#define clz(u)                __builtin_clz(u)",
 			"#define checkbit(num,i)       (num&(1<<i))  //select the bit of position i of val",
 			"#define lowbit(u)             ((u)&((u)^((u)-1))) //get the lowest bit of u",
-			"#define trav(u,it)            for(auto it = u.begin(); it != u.end(); it++)",
-			"#define in(u, a, b)           (min(a,b) <= u && u <= max(a,b))",
 			"",
 			"//----------TYPEDEFS----------",
-			"typedef unsigned int          uint;",
-			"typedef long long             ll;",
-			"typedef unsigned long long    ull;",
-			"typedef long double           ld;",
-			"typedef pair<int, int>         pii;",
+			"typedef unsigned int                       uint;",
+			"typedef long long                          ll;",
+			"typedef unsigned long long                 ull;",
+			"typedef pair<int, int>                     pii;",
+			"typedef pair<long long, long long>         pll;",
 			"",
 			"//----------DEBUG METHODS----------",
 			"void __print(int x) { cerr << x; }",
@@ -107,116 +95,20 @@
 			"#define nline cerr << endl",
 			"#else",
 			"#define debug(x...)",
-			"#define nline ",
+			"#define nline",
 			"#endif",
 			"",
 			"//----------CONSTANTS----------",
 			"const ll mod = 1000000007;",
 			"const ll mod2 = 998244353;",
-			"const ld ep = 0.0000001;",
-			"const ld pi = acos(-1.0);",
-			"",
-			"//----------TEMPLATES---------- Works only in C++ 17",
-			"template<typename... T>",
-			"void read(T&... args) { ((cin >> args), ...); }",
-			"template<typename... T>",
-			"void put(T&&... args) { ((cout << args << \" \"), ...); }",
-			"template<typename... T>",
-			"void putl(T&&... args) { ((cout << args << \" \"), ...); cout << endl; }",
-			"template<typename... T>",
-			"void putnl(T&&... args) { ((cout << args << \"\\n\"), ...);}",
-			"",
-			"//----------Custom hash map-------------",
-			"struct custom_hash",
-			"{",
-			"    static uint64_t splitmix64(uint64_t x)",
-			"    {",
-			"        x += 0x9e3779b97f4a7c15;",
-			"        x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;",
-			"        x = (x ^ (x >> 27)) * 0x94d049bb133111eb;",
-			"        return x ^ (x >> 31);",
-			"    }",
-			"",
-			"    size_t operator()(uint64_t x) const {",
-			"        static const uint64_t FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count();",
-			"        return splitmix64(x + FIXED_RANDOM);",
-			"    }",
-			"};",
-			"template <typename T1, typename T2> // Key should be integer type",
-			"using safe_map = unordered_map<T1, T2, custom_hash>;",
-			"",
-			"",
-			"//----------Operator overloads--------------",
-			"template <typename T1, typename T2> // cin >> pair<T1, T2>",
-			"istream& operator>>(istream& istream, pair<T1, T2>& p) {",
-			"    return (istream >> p.first >> p.second);",
-			"}",
-			"template <typename T> // cin >> vector<T>",
-			"istream& operator>>(istream& istream, vector<T>& v) {",
-			"    for (auto& it : v)",
-			"        cin >> it;",
-			"    return istream;",
-			"}",
-			"template <typename T1, typename T2> // cout << pair<T1, T2>",
-			"ostream& operator<<(ostream& ostream, const pair<T1, T2>& p) {",
-			"    return (ostream << p.first << \" \" << p.second);",
-			"}",
-			"template <typename T> // cout << vector<T>",
-			"ostream& operator<<(ostream& ostream, const vector<T>& c) {",
-			"    for (auto& it : c)",
-			"        cout << it << \" \";",
-			"    return ostream;",
-			"}",
-			"template <typename T>",
-			"int32_t size_i(T& container) { return static_cast<int32_t>(container.size()); }",
-			"",
-			"",
-			"//----------Mathematical functions------------",
-			"int GCD_extended(int a, int b, int& x, int& y) {",
-			"    x = 1, y = 0;",
-			"    int x1 = 0, y1 = 1, a1 = a, b1 = b;",
-			"    while (b1){",
-			"        int q = a1 / b1;",
-			"        tie(x, x1) = make_tuple(x1, x - q * x1);",
-			"        tie(y, y1) = make_tuple(y1, y - q * y1);",
-			"        tie(a1, b1) = make_tuple(b1, a1 - q * b1);",
-			"    }",
-			"    return a1;",
-			"}",
-			"",
-			"ll modpow(ll x, ll n, ll m = mod) {",
-			"    if (x == 0 && n == 0)",
-			"        return 0; // undefined case",
-			"    ",
-			"    ll res = 1;",
-			"    while (n > 0)",
-			"    {",
-			"        if (n % 2)",
-			"            res = (res * x) % m;",
-			"        x = (x * x) % m;",
-			"        n /= 2;",
-			"    }",
-			"    return res;",
-			"}",
-			"",
-			"ll modinv(ll x, ll m = mod) {",
-			"    return modpow(x, m - 2, m);",
-			"}",
-			"",
-			"mt19937 rng;",
-			"int getRandomNumber(int l, int r)",
-			"{",
-			"    uniform_int_distribution<int> dist(l, r);",
-			"    return dist(rng);",
-			"}",
 			"",
 			"/*/------------------------------ CODE BEGINS ------------------------------/*/",
-			"void preprocess(){",
-			"    rng = mt19937(chrono::steady_clock::now().time_since_epoch().count());",
-			"}\n",
+			"// Put global variables here",
 			"const int N = 2e5 + 5;",
 			"",
-			"void solve(){",
+			"void preprocess(){}",
+			"",
+			"void testcase(){",
 			"    ${0:// Solve here}",
 			"}",
 			"/*/------------------------------- CODE ENDS -------------------------------/*/",
@@ -227,10 +119,11 @@
 			"",
 			"    preprocess();",
 			"",
-			"    int num_tc=1; ",
-			"    ${1: cin>>num_tc;}",
+			"    int num_tc=1;",
+			"    ${1:cin>>num_tc;}",
 			"    for(int tc=1;tc<=num_tc;tc++){",
-			"        solve();",
+			"        // debug(tc);",
+			"        testcase();",
 			"    }",
 			"",
 			"    return 0;",
@@ -392,55 +285,6 @@
 		],
 		"description": "Use it to cheking whether num is prime or not"
 	},
-	
-	"snippet for trucating dividend to its next multiple by divisor":{
-		"prefix": ["funupperTruncate"],
-		"body": [
-			"\nlong long upperTruncate(long long dividend,long long divisor){",
-			"\treturn dividend + (divisor-(dividend%divisor))%divisor;",
-			"}\n"
-			
-		],
-		"description": "Use it to Truncate a number to its next multiple to its divisor"
-	},
-	
-	"snippet for checking string is regular expression or not":{
-		"prefix": ["funisRegularExp"],
-		"body": [
-			"bool isRegularExp(string s){",
-			"\tint n=s.length(), stack = 0;;",
-			"\tfor(int i=0;i<n;i++){",
-			"\t\tif(s[i]=='(') stack++;",
-			"\t\telse{",
-			"\t\t\tstack--;",
-			"\t\t\tif(stack<0) return false;",
-			"\t\t}",
-			"\t}",
-			"\treturn (stack==0);",
-			"}",
-		],
-		"description": "Use it to check whether string is regular expression or not"
-	},
-	
-	"snippet for printing number in binary":{
-		"prefix": ["fundectobinary"],
-		"body": [
-			"\nvoid decToBinary(int val,int bits=8){",
-			"\tcout<<setw(4)<<val<<\" -> \";",
-			"\tstack<int> stk;",
-			"\twhile(bits--){",
-			"\t\tstk.push(val&1);",
-			"\t\tval >>= 1;",
-			"\t}",
-			"\twhile(!stk.empty()){",
-			"\t\tcout<<stk.top();",
-			"\t\tstk.pop();",
-			"\t}",
-			"\tcout<<endl;",
-			"}\n"
-		],
-		"description": "Use it to check whether string is regular expression or not"
-	},
 
 	"snippet for declaring array and taking input":{
 		"prefix": ["arrin"],
@@ -464,9 +308,9 @@
 	"snippet for declaring vector and taking input": {
 		"prefix": "vecin",
 		"body": [
-		  "vector<${1:int}> ${2:vec}(${3:n});",
-		  "for(int i=0;i<${3:n};i++){",
-		  "\tcin>>${2:vec}[i];\n}",
+			"vector<${1:int}> ${2:vec}(${3:n});",
+			"for(int i=0;i<${3:n};i++){",
+			"\tcin>>${2:vec}[i];\n}",
 		],
 		"description": "snippet for declaring vector and taking input"
 	},
@@ -474,8 +318,9 @@
 	"snippet for displaying a vector":{
 		"prefix": ["vecout"],
 		"body": [
-			"for(int i=0;i<${1:vec}.size();i++) ",
+			"for(int i=0;i<${1:vec}.size();i++){",
 			"\tcout<<${1:vec}[i]<<' ';",
+			"}",
 			"cout<<endl;"
 		],
 		"description": "Use it to display a vector"
@@ -544,112 +389,6 @@
 		"description": "Snippet for Sieve to check Prime Numbers"
 	},
 
-	"snippet for generating testcases":{
-		"prefix": ["testcaseGenerator"],
-		"body": [
-			"// A C++ Program to generate test cases for ",
-			"// array filled with random numbers\n",
-			"#include<bits/stdc++.h>",
-			"using namespace std;\n",
-			"template<typename T>",
-			"T getrandom(T l,T r){",
-			"\treturn rand() % (r-l+1) + l;",
-			"}\n",
-			"void print(vector<int>& vec){",
-			"\tfor(auto &val: vec)",
-			"\t\tcout<<val<<' ';",
-			"\tcout<<endl;",
-			"}\n",
-			"void print(string& s){",
-			"\tfor(auto &ch: s)",
-			"\t\tcout<<ch;",
-			"\tcout<<endl;",
-			"}\n",
-			"int main()",
-			"{",
-			"\tsrand(time(NULL));",
-			"\tint num_tc = ${1:5}; ",
-			"\tint MAXNUM = ${2:10};",
-			"\tint LeftLimit  = ${3:1};",
-			"\tint RightLimit = ${4:100};\n",
-			"\tfreopen (\"Test_Cases.txt\", \"w\", stdout);",
-			"\tcout<<num_tc<<endl;",
-			"\tfor(int tt=1;tt<=num_tc;tt++){",
-			"\t\tint n = getrandom(1,MAXNUM);\n",
-			"\t\t// string vec(n);",
-			"\t\tvector<int> vec(n);\n",
-			"\t\tfor(int i=0;i<n;i++){",
-			"\t\t\tvec[i] = getrandom(LeftLimit,RightLimit);",
-			"\t\t}",
-			"\t\tcout<<n<<endl;",
-			"\t\t// sort(vec.begin(),vec.end());\n",
-			"\t\tprint(vec);",
-			"\t}",
-			"\tfclose(stdout);",
-			"\treturn(0);",
-			"}"
-
-		],
-		"description": "This snippet generates testcases"
-	},
-
-	"snippet for generating leetcode":{
-		"prefix": ["leetcodetcgenerator"],
-		"body": [
-			// A C++ Program to generate test cases for Leetcode Questions
-			"#include<bits/stdc++.h>",
-			"using namespace std;\n",
-			"template<typename T>",
-			"T getrandom(T l,T r){",
-			"\treturn rand() % (r-l+1) + l;",
-			"}\n",
-			"void print(vector<int>& vec){",
-			"\tcout<<\"[\";",
-			"\tcout<<vec[0];",
-			"\tfor(int i=1;i<vec.size();i++){",
-			"\t\tcout<<\",\"<<vec[i];",
-			"\t}",
-			"\tcout<<\"]\\n\";",
-			"}\n",
-			"void print(string& s){",
-			"\tcout<<'\"';",
-			"\tfor(char &ch: s) cout<<ch;",
-			"\tcout<<'\"'<<endl;",
-			"}\n\n",
-			"int main()",
-			"{",
-			"\tsrand(time(NULL));",
-			"\tint num_tc = ${1:1}; ",
-			"\tint MAXNUM = ${2:20};",
-			"\tint LeftLimit  = ${3:1};",
-			"\tint RightLimit = ${4:100};",
-			"\tfreopen (\"Test_Cases.txt\", \"w\", stdout);\n",
-			"\t//cout<<\"[\";",
-			"\tfor(int tt=1;tt<=num_tc;tt++){",
-			"\t\tvector<int> vec(MAXNUM);",
-			"\t\tfor(int i=0;i<MAXNUM;i++){",
-			"\t\t\tvec[i] = getrandom(LeftLimit,RightLimit);",
-			"\t\t}",
-			"\t\t// sort(vec.begin(),vec.end());",
-			"\t\tprint(vec);\n",
-			"\t\t// if(tt<num_tc) cout<<\",\";",
-			"\t\t// string str(MAXNUM,'-');",
-			"\t\t// for(int i=0;i<MAXNUM;i++){",
-			"\t\t//     str[i] = getrandom('a','z');",
-			"\t\t//     // str[i] = getrandom('0','1');",
-			"\t\t// }",
-			"\t\t// sort(str.begin(),str.end());",
-			"\t\t// print(str);",
-			"\t}",
-			"\t// cout<<\"]\";",
-			"\tfclose(stdout); ",
-			"\treturn(0); ",
-			"}"
-
-		],
-		"description": "This snippet generates testcases for leetcode"
-	},
-
 	"snippet for all direction movement":{
 		"prefix": ["dxy"],
 		"body": [
@@ -661,7 +400,7 @@
 
 		],
 		"description": "This snippet generates testcases for leetcode"
-	},	
+	},
 
 	"snippet for input output in .txt style" :{
 		"prefix": ["txtio"],
@@ -672,46 +411,6 @@
 			"\tfreopen(\"debug.txt\", \"w\", stderr);",
 			"#endif\n",
 			"${0:#ifndef ONLINE_JUDGE\n\tfclose(stdin);//move this line to bottom\n#endif}\n"
-		],
-		"description": "This snippet generates testcases for leetcode"
-	},
-
-	"snippet for finding next greater element in a vector" :{
-		"prefix": ["funnextgreater"],
-		"body": [
-			"template<typename T>",
-			"vector<int> nextGreaterRight(vector<T>& vec){",
-			"\t// Returns a vector which contains an index for which the right element will be",
-			"\t// greater than the current element ",
-			"\t// If there isn't any greater element then there will be -1.",
-			"\tint n = vec.size();",
-			"\tstack<T> stk;",
-			"\tvector<int> result(n);\n",
-			"\tfor(int i=n-1;i>=0;--i){",
-			"\t\twhile(!stk.empty() && vec[stk.top()] <= vec[i])",
-			"\t\t\tstk.pop();",
-			"\t\tresult[i] = !stk.empty() ? stk.top() : -1;",
-			"\t\tstk.push(i);",
-			"\t}",
-			"\treturn result;",
-			"}",
-			
-			"",
-			
-			"template<typename T>",
-			"vector<int> nextGreaterLeft(vector<T>& vec){",
-			"\tint n = vec.size();",
-			"\tstack<T> stk;",
-			"\tvector<int> result(n);\n",
-			"\tfor(int i=0;i<n;i++){",
-			"\t\twhile(!stk.empty() && vec[stk.top()] <= vec[i])",
-			"\t\t\tstk.pop();",
-			"\t\tresult[i] = !stk.empty() ? stk.top() : -1;",
-			"\t\tstk.push(i);",
-			"\t}",
-			"\treturn result;",
-			"}"
-
 		],
 		"description": "This snippet generates testcases for leetcode"
 	},
@@ -735,16 +434,16 @@
 	"Use this function to get the value of nPr": {
 		"prefix": "funnPr",
 		"body": [
-		  "template<typename T>",
-		  "T nPr(T n,T r){",
-		  "    T ans = 1,times = n-r;",
-		  "    while(times--)",
-		  "        ans *= n--;",
-		  "    return ans;",
-		  "}\n"
+			"template<typename T>",
+			"T nPr(T n,T r){",
+			"    T ans = 1,times = n-r;",
+			"    while(times--)",
+			"        ans *= n--;",
+			"    return ans;",
+			"}\n"
 		],
 		"description": "Use this function to get the value of nPr"
-	  },
+	},
 	
 	"Use this function to get the Highest setbit of a number": {
 		"prefix": "fungetHighestPowerof2",
@@ -760,12 +459,37 @@
 			"}"
 		],
 		"description": "Use this function to get the value of nPr"
-	  },
+	},
+
+	"Functions to modular exponentiation and modular multiplicative inverse": {
+		"prefix": "funModPowAndInv",
+		"body": [
+			"ll modpow(ll x, ll n, ll m = mod) {",
+			"    if (x == 0 && n == 0)",
+			"        return 0; // undefined case",
+			"    ",
+			"    ll res = 1;",
+			"    while (n > 0)",
+			"    {",
+			"        if (n % 2)",
+			"            res = (res * x) % m;",
+			"        x = (x * x) % m;",
+			"        n /= 2;",
+			"    }",
+			"    return res;",
+			"}",
+			"",
+			"ll modinv(ll x, ll m = mod) {",
+			"    return modpow(x, m - 2, m);",
+			"}"
+		],
+		"description": "Functions to modular exponentiation and modular multiplicative inverse"
+	},
 	
 	"snippet for declaring a vector of integer": {
 		"prefix": "vec",
 		"body": [
-		  "vector<${1:int}> ${2:vec} = vector<${1:int}>(${3:n},${4:0});\n"
+			"vector<${1:int}> ${2:vec} = vector<${1:int}>(${3:n},${4:0});\n"
 		],
 		"description": "snippet for declaring a vector of integer"
 	},
@@ -774,34 +498,6 @@
 		"prefix": "2dvector",
 		"body": [
 			"vector<vector<${1:int}>> ${2:vec}(${3:n},vector<${1:int}>(${4:m},${5:0}));\n"
-		],
-		"description": "snippet for declaring a vector of integer"
-	},	
-
-	"snippet for declaring a struct of Points": {
-		"prefix": "structpoint",
-		"body": [
-			"struct Point{",
-			"    int x,y;",
-			"    Point(int x=0,int y=0){",
-			"        this->x = x;",
-			"        this->y = y;",
-			"    }",
-			"    Point operator + (Point const& obj) {",
-			"        Point res;",
-			"        res.x = x + obj.x;",
-			"        res.y = y + obj.y;",
-			"        return res;",
-			"    }",
-			"    Point operator - (Point const& obj) {",
-			"        Point res;",
-			"        res.x = x - obj.x;",
-			"        res.y = y - obj.y;",
-			"        return res;",
-			"   }",
-			"    void print() {cout << \"x = \"<< x << \", y = \" << y << '\\n';",
-			"   }",
-			"};"
 		],
 		"description": "snippet for declaring a vector of integer"
 	},
@@ -842,6 +538,402 @@
 		],
 		"description": "snippet for declaring debug methods"
 	},
+
+	"Use this when pasting Solution class template from leetcode": {
+		"prefix": "leetcodesnippet",
+		"body": [
+			"//\tCode written by Aditya ;)   ||  C++ Snippet",
+			"#include <bits/stdc++.h>",
+			"using namespace std;",
+			"",
+			"${0:// Soltuion class of leetcode will go here}",
+			"",
+			"int main(){",
+			"    Solution solution;",
+			"",
+			"    return 0;",
+			"}",
+			""
+		],
+		"description": "Use this when pasting Solution class template from leetcode"
+	},
+	
+	"snippet for lower_bound": {
+		"prefix": "lowerbound",
+		"body": [
+			"auto it = lower_bound(${1:vec}.begin(),${1:vec}.end(),${2:target});",
+			"int pos = it-${1:vec}.begin();",
+			"int val = *it!=${1:vec}.end() : *it: -1;",
+		],
+		"description": "Use this to get the lower bound on a sorted array"
+	},
+
+	
+	"snippet for upper_bound": {
+		"prefix": "upperbound",
+		"body": [
+			"auto it = upper_bound(${1:vec}.begin(),${1:vec}.end(),${2:target});",
+			"int pos = it-${1:vec}.begin();",
+			"int val = *it!=${1:vec}.end() : *it: -1;",
+		],
+		"description": "Use this to get the upper bound on a sorted array"
+	},
+
+	"snippet for adjacency list input": {
+		"prefix": "graphin",
+		"body": [
+			"int n,m; cin>>n>>m;",
+			"int w; cin>>w;",
+			"vector<vector<int>> adj(n+1);",
+			"for(int i=0;i<m;i++){",
+			"    int u,v;cin>>u>>v;",
+			"    adj[u].push_back(v);",
+			"    adj[v].push_back(u); // delete this in directed graph",
+			"}"
+		],
+		"description": "Adjacency list input"
+	},
+
+	"snippet for DFS recursive": {
+		"prefix": "dfs",
+		"body": [
+			"void dfs(int u,vector<vector<int>>& adj,vector<int>& vis){",
+			"    vis[u]=1;",
+			"    ${0:/*process node u*/}",
+			"    for(int v:adj[u]){",
+			"        if(!vis[v]){",
+			"            dfs(v,adj,vis);",
+			"        }",
+			"    }",
+			"}"
+		],
+		"description": "Depth First Search template"
+	},
+
+	"snippet for DSU": {
+		"prefix": "dsu",
+		"body": [
+			"struct DSU{",
+			"    vector<int> parent,sz;",
+			"    DSU(int n){",
+			"        parent.resize(n);sz.assign(n,1);",
+			"        iota(parent.begin(),parent.end(),0);",
+			"    }",
+			"    int find(int x){",
+			"        if(parent[x]==x) return x;",
+			"        return parent[x]=find(parent[x]);",
+			"    }",
+			"    bool unite(int a,int b){",
+			"        a=find(a);b=find(b);",
+			"        if(a==b) return false;",
+			"        if(sz[a]<sz[b]) swap(a,b);",
+			"        parent[b]=a;sz[a]+=sz[b];",
+			"        return true;",
+			"    }",
+			"};"
+		],
+		"description": "Disjoint Set Union (Union-Find) with path compression and union by size"
+	},
+
+	"snippet for min heap": {
+		"prefix": "minheap",
+		"body": [
+			"priority_queue<int,vector<int>,greater<int>> pq;"
+		],
+		"description": "Min heap declaration"
+	},
+
+	"snippet for max heap": {
+		"prefix": "maxheap",
+		"body": [
+			"priority_queue<int> pq;"
+		],
+		"description": "Max heap declaration"
+	},
+	
+	"snippet for 2D matrix input": {
+		"prefix": "matrixin",
+		"body": [
+			"int n; cin>>n;",
+			"int m=n; ${1:cin>>m;}",
+			"vector<vector<int>> ${2:mat}(n,vector<int>(m));",
+			"for(int i=0;i<n;i++){",
+			"    for(int j=0;j<m;j++){",
+			"        cin>>${2:mat}[i][j];",
+			"    }",
+			"}"
+		],
+		"description": "Matrix input snippet"
+	},
+
+	"snippet for printing 2D matrix": {
+		"prefix": "matrixout",
+		"body": [
+			"for(int i=0;i<n;i++){",
+			"    for(int j=0;j<m;j++){",
+			"        cout<<${1:mat}[i][j]<<' ';",
+			"    }",
+			"    cout<<endl;",
+			"}"
+		],
+		"description": "Matrix output snippet"
+	},
+
+	"snippet for 2D matrix in and out": {
+		"prefix": "matrixinout",
+		"body": [
+			"int n; cin>>n;",
+			"int m=n;${1:cin>>m;}",
+			"vector<vector<int>> ${2:mat}(n,vector<int>(m));",
+			"for(int i=0;i<n;i++){",
+			"    for(int j=0;j<m;j++){",
+			"        cin>>${2:mat}[i][j];",
+			"    }",
+			"}",
+			"",
+			"${0:// Populate the matrix here}",
+			"",
+			"for(int i=0;i<n;i++){",
+			"    for(int j=0;j<m;j++){",
+			"        cout<<${2:mat}[i][j]<<' ';",
+			"    }",
+			"    cout<<endl;",
+			"}"
+		],
+		"description": "Matrix output snippet"
+	},
+
+	"snippet for sorting a container": {
+		"prefix": "sort",
+		"body": [
+			"sort(${1:vec}.begin(),${1:vec}.end());",
+		],
+		"description": "Sorting a container"
+	},
+
+	"snippet for sorting a container in reverse": {
+		"prefix": "sortreverse",
+		"body": [
+			"sort(${1:vec}.rbegin(),${1:vec}.rend());",
+		],
+		"description": "Sorting a container in reverse"
+	},
+
+	"read any primitive type": {
+		"prefix": "readtype",
+		"body": [
+			"${1:int} ${2:n}; cin>>${2:n};\n"
+		],
+		"description": "Sorting a container in reverse"
+	},
+
+	"Snippet for reading int": {
+		"prefix": "readint",
+		"body": [
+			"int ${1:n}; cin>>${1:n};\n"
+		],
+		"description": "Snippet for reading int"
+	},
+
+	"Snippet for reading string": {
+		"prefix": "readstring",
+		"body": [
+			"string ${1:s}; cin>>${1:s};\n"
+		],
+		"description": "Snippet for reading string"
+	},
+
+	"Snippet for doing conrainer.begin(), container.end()": {
+		"prefix": "all",
+		"body": [
+			"${1:vec}.begin(),${1:vec}.end()"
+		],
+		"description": "Snippet for reading string"
+	},
+
+	"Snippet for BitwiseTrie": {
+		"prefix": "bitwiseTrie",
+		"body": [
+			"struct TrieNode {",
+			"    TrieNode* child[2];",
+			"    int cnt; // how many numbers pass through this node",
+			"    TrieNode() {",
+			"        child[0]=child[1]=nullptr;",
+			"        cnt=0;",
+			"    }",
+			"};",
+			"",
+			"struct BitwiseTrie {",
+			"    TrieNode* root;",
+			"    int numBits;",
+			"",
+			"    BitwiseTrie(int bits = 31){",
+			"        root = new TrieNode();",
+			"        numBits = bits;",
+			"    }",
+			"",
+			"    void insert(int num) {",
+			"        TrieNode* node=root;",
+			"        for(int i=numBits;i>=0;i--) {",
+			"            int bit=(num>>i)&1;",
+			"            if(!node->child[bit]){",
+			"                node->child[bit]=new TrieNode();",
+			"            }",
+			"            node=node->child[bit];",
+			"            node->cnt++;",
+			"        }",
+			"    }",
+			"",
+			"    void erase(int num) {",
+			"        TrieNode* node=root;",
+			"        for(int i=numBits;i>=0;i--) {",
+			"            int bit=(num>>i)&1;",
+			"            node=node->child[bit];",
+			"            node->cnt--;",
+			"        }",
+			"    }",
+			"",
+			"    int getMaxXor(int num) {",
+			"        TrieNode* node=root;",
+			"        int ans=0;",
+			"        for(int i=numBits;i>=0;i--) {",
+			"            int bit=(num>>i)&1;",
+			"            int opp=1-bit;",
+			"            if(node->child[opp] && node->child[opp]->cnt>0) {",
+			"                ans |= (1<<i);",
+			"                node=node->child[opp];",
+			"            } else {",
+			"                node=node->child[bit]; // forced to follow same bit",
+			"            }",
+			"        }",
+			"        return ans;",
+			"    }",
+			"",
+			"    int getMinXor(int num) {",
+			"        TrieNode* node=root;",
+			"        int ans=0;",
+			"        for(int i=numBits;i>=0;i--) {",
+			"            int bit=(num>>i)&1;",
+			"            if(node->child[bit] && node->child[bit]->cnt>0) {",
+			"                node=node->child[bit];",
+			"            } else {",
+			"                ans|=(1<<i);",
+			"                node=node->child[1-bit];",
+			"            }",
+			"        }",
+			"        return ans;",
+			"    }",
+			"",
+			"    bool exists(int num) {",
+			"        TrieNode* node=root;",
+			"        for(int i=numBits;i>=0;i--) {",
+			"            int bit=(num>>i)&1;",
+			"            if(!node->child[bit] || node->child[bit]->cnt==0) return false;",
+			"            node=node->child[bit];",
+			"        }",
+			"        return true;",
+			"    }",
+			"};"
+		],
+		"description": "Snippet for BitwiseTrie"
+	},
+
+	"Snippet for StringTrie": {
+		"prefix": "stringTrie",
+		"body": [
+			"struct TrieNode {",
+			"    TrieNode* child[26];",
+			"    bool isEnd; // marks if a word ends here",
+			"    int cnt;    // how many words pass through this node",
+			"    TrieNode() {",
+			"        isEnd=false;",
+			"        cnt=0;",
+			"        for(int i=0;i<26;i++) child[i]=nullptr;",
+			"    }",
+			"};",
+			"",
+			"struct StringTrie {",
+			"    TrieNode* root;",
+			"    StringTrie() {",
+			"        root=new TrieNode();",
+			"    }",
+			"",
+			"    void insert(const string& s) {",
+			"        TrieNode* node=root;",
+			"        for(char c:s) {",
+			"            int idx=c-'a';",
+			"            if(!node->child[idx]) node->child[idx]=new TrieNode();",
+			"            node=node->child[idx];",
+			"            node->cnt++;",
+			"        }",
+			"        node->isEnd=true;",
+			"    }",
+			"",
+			"    bool search(const string& s) {",
+			"        TrieNode* node=root;",
+			"        for(char c:s) {",
+			"            int idx=c-'a';",
+			"            if(!node->child[idx]) return false;",
+			"            node=node->child[idx];",
+			"        }",
+			"        return node->isEnd;",
+			"    }",
+			"",
+			"    bool startsWith(const string& prefix) {",
+			"        TrieNode* node=root;",
+			"        for(char c:prefix) {",
+			"            int idx=c-'a';",
+			"            if(!node->child[idx]) return false;",
+			"            node=node->child[idx];",
+			"        }",
+			"        return true;",
+			"    }",
+			"",
+			"    void erase(const string& s) {",
+			"        if(!search(s)) return; // only erase if exists",
+			"        TrieNode* node=root;",
+			"        for(char c:s) {",
+			"            int idx=c-'a';",
+			"            node=node->child[idx];",
+			"            node->cnt--;",
+			"        }",
+			"        node->isEnd=false;",
+			"    }",
+			"};",
+			""
+		],
+		"description": "Snippet for StringTrie"
+	},
+
+	"Snippet for getting ceil value when dividing": {
+		"prefix": "ceil",
+		"body": [
+			"((${1:numerator}+(${2:denominator}-1))/${2:denominator})"
+		],
+		"description": "Snippet for getting ceil value when dividing"
+	},
+
+	"snippet for binary search on sorted array": {
+		"prefix": "binsearch",
+		"body": [
+			"int ${1:binarySearch}(vector<int>& a,int target){",
+			"    int l=0,r=a.size()-1;",
+			"    while(l<=r){",
+			"        int mid=l+(r-l)/2;",
+			"        if(a[mid]==target) return mid;",
+			"        else if(a[mid]<target) l=mid+1;",
+			"        else r=mid-1;",
+			"    }",
+			"    return -1;",
+			"}"
+		],
+		"description": "Standard Binary Search"
+	}
+
+
+
+
+
 
 
 }
